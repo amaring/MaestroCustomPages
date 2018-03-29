@@ -1,0 +1,129 @@
+<script type="text/javascript">
+// This is what learners should see:
+var StudentIcons = new Array();
+StudentIcons[0] = 'training-dashboards.jpg'
+StudentIcons[1] = 'course-catalog.geo'
+StudentIcons[2] = 'upcoming-training-03.jpg'
+StudentIcons[3] = 'upcoming-training-02.jpg'
+StudentIcons[4] = 'required-training.jpg'
+StudentIcons[5] = 'elective-training.jpg'
+StudentIcons[6] = 'submit-ext-training.jpg'
+StudentIcons[7] = 'my-gateway-journey.jpg'
+StudentIcons[8] = 'transcripts.jpg'
+StudentIcons[9] = 'learning-plans.jpg'
+StudentIcons[10] = 'documents.jpg'
+StudentIcons[11] = 'help.jpg'
+StudentIcons[12] = 'suggestions.jpg'
+StudentIcons[13] = 'settings.jpg'
+
+var StudentLinks = new Array();
+StudentLinks[0] = domain + '/dashboard.geo'
+StudentLinks[1] = domain + '/coursecatalog.geo'
+StudentLinks[2] = domain + '/coursecatalog.geo?selectTab=ILT+Calendar'
+StudentLinks[3] = domain + '/redirectingtrainingschedule.geo?selectTab=Month+View'
+StudentLinks[4] = domain + '/myrequiredtraining.geo'
+StudentLinks[5] = domain + '/mhmyelectivetraining.geo'
+StudentLinks[6] = domain + '/myrequests.geo'
+StudentLinks[7] = domain + '/coursecatalog.geo?selectTab=Bundles'
+StudentLinks[8] = domain + '/mytranscript.geo'
+StudentLinks[9] = domain + '/myrequiredtraining.geo?selectTab=By+Plan'
+StudentLinks[10] = domain + '/viewonlineresources.geo'
+StudentLinks[11] = domain + '/iframe.geo?id=7wppA3ZBQSyFreHXb3naRToQIbpOW9Iq%2bImbbPzuQ58xT8uPTE7gyQ%3d%3d'
+StudentLinks[12] = domain + 'mailto:emailaddress@gtc.org?subject=Suggestions%20for%20the%20training%20site'
+StudentLinks[13] = domain + '/dynamichome.geo?MockupID=SettingsandPrefsHome&amp;nav=SettingsandPrefs'
+
+for (i=0; i< StudentIcons.length; i++) {
+var student = document.createElement("div");
+student.id = "student"
+student.innerHTML = '<a class="navigational" href="' + StudentLinks[i] + '"><img src="' + StudentIcons[i] + '" /></a>';
+$("#parent").append(student);
+}
+
+var SupervisorIcons = new array();
+SupervisorIcons[0] = 'dashboard.jpg'
+SupervisorIcons[1] = 'reports.jpg'
+SupervisorIcons[2] = 'approvals.jpg'
+SupervisorIcons[3] = 'assign-training.jpg'
+SupervisorIcons[4] = 'user-manager.jpg'
+SupervisorIcons[5] = 'completion-certificates.jpg'
+
+var SupervisorLins = new Array();
+SupervisorLinks[0] = '/dashboard.geo'
+SupervisorLinks[1] = '/standardreports2.geo?nav=StandardReports'
+SupervisorLinks[2] = '/managetrainingrqst.geo'
+SupervisorLinks[3] = '/courseregistrations.geo'
+SupervisorLinks[4] = '/userstabs.geo'
+SupervisorLinks[5] = '#'
+
+for (i=0; i< SupervisorIcons.length; i++) {
+var supervisor = document.createElement("div");
+supervisor.id = "supervisor"
+supervisor.innerHTML = '<a class="navigational" href="' + SupervisorLinks[i] + '"><img src="' + SupervisorIcons[i] + '" /></a>';
+$("#parent").append(supervisor);
+}
+
+var InstructorIcons = new array();
+SupervisorIcons[0] = 'create-a-course.jpg'
+SupervisorIcons[1] = 'create-a-class.jpg'
+SupervisorIcons[2] = 'gradebook-attendance.jpg'
+SupervisorIcons[3] = 'assign-training.jpg'
+SupervisorIcons[4] = 'resources.jpg'
+SupervisorIcons[5] = 'documents.jpg'
+
+var InstructorLins = new Array();
+SupervisorLinks[0] = '/managecourses.geo'
+SupervisorLinks[1] = '/manageclassclasses.geo'
+SupervisorLinks[2] = '/gradebook.geo.geo'
+SupervisorLinks[3] = '/manageresources.geo'
+SupervisorLinks[4] = '/userstabs.geo'
+SupervisorLinks[5] = 'viewonlineresources.geo'
+
+for (i=0; i< SupervisorIcons.length; i++) {
+var instructor = document.createElement("div");
+instructor.id = "supervisor"
+instructor.innerHTML = '<a class="navigational" href="' + InstructorLinks[i] + '"><img src="' + InstructorIcons[i] + '" /></a>';
+$("#parent").append(instructor);
+}
+var style = document.createElement("style");
+style.type = "text/css";
+style.innerHTML = ".navigational {display: block; float: left; margin: 5px 5px 0 0; box-sizing: border-box; padding: 0px; border: 5px solid white;} .navigational:hover{border-color: transparent;} .supervisor, .instructor{display: none;}";
+
+</script>
+<div id="parent"><!-- . -->
+</div>
+<div style="clear: both;">&nbsp;</div>
+<script type="text/javascript">// <![CDATA[
+// Look at the different role options on the drop-down: Show only learners the My Required / My Elective widgets
+var check = document.getElementById('roleId');
+// administrator//
+    if (check.options[check.selectedIndex].value == '2000009750') {
+		document.getElementById('student').style.display = "block";
+		document.getElementById('supervisor').style.display = "block";
+		document.getElementById('instructor').style.display = "block";
+    }
+// domain manager //
+	else if (check.options[check.selectedIndex].value == '2000009752') {
+		document.getElementById('student').style.display = "none";
+		document.getElementById('supervisor').style.display = "none";
+		document.getElementById('instructor').style.display = "none";
+	}
+// instructor //
+	else if (check.options[check.selectedIndex].value == '2000009753') {
+		document.getElementById('student').style.display = "none";
+		document.getElementById('supervisor').style.display = "none";
+		document.getElementById('instructor').style.display = "block";
+	}
+// learner //
+	else if (check.options[check.selectedIndex].value == '2000009751') {
+		document.getElementById('student').style.display = "block";
+		document.getElementById('supervisor').style.display = "none";
+		document.getElementById('instructor').style.display = "none";
+	}
+
+// supervisor //
+	else if (check.options[check.selectedIndex].value == '2000009754') {
+		document.getElementById('student').style.display = "none";
+		document.getElementById('supervisor').style.display = "block";
+		document.getElementById('instructor').style.display = "none";
+	}
+// ]]></script>
