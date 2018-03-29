@@ -1,0 +1,70 @@
+<script type="text/javascript">// <![CDATA[
+
+// put your domain name in below:
+var domain = "/geonext/DOMAINNAME/"
+
+// Assumptions: each item in the lists below will correspond to the item with the identical number in the other two lists
+
+// Icons in the following list can be swapped for other icons available on https://fontawesome.com/
+// Note that not all icons are supported - you will want to test before making available for production use
+var Icons = new Array();
+Icons[0] = 'fa-check'
+Icons[1] = 'fa-sticky-note'
+Icons[2] = 'fa-list'
+Icons[3] = 'fa-bell'
+Icons[4] = 'fa-star'
+
+// Update this list with links to the pages the icons shoud take the user to
+var NavElements = new Array();
+NavElements[0] = domain + 'trainingandmetricshome.geo?nav=MyHome'
+NavElements[1] = domain + 'coursecatalog.geo'
+NavElements[2] = domain + 'mytranscript.geo?reverseSortBy=RegistrationEntry.Created'
+NavElements[3] = domain + 'myrequiredtraining.geo?nav=MyRequiredLearning'
+NavElements[4] = 'https://www.google.com" target="_blank'
+
+// Update this list with text that should appear below the icons
+var NavNames = new Array();
+NavNames[0] = 'My Training'
+NavNames[1] = 'Catalog'
+NavNames[2] = 'Transcript'
+NavNames[3] = 'Required Training'
+NavNames[4] = 'Course Requests'
+// ]]></script>
+<div class="jumbotron-custom">
+<div class="jumbotron-filter">
+<div class="container-group">
+<div class="header-text">
+<h1>Federal Learning</h1>
+</div>
+<div class="btns-box">
+<ul id="iconList" class="list-unstyled list-inline">&nbsp;</ul>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">// <![CDATA[
+
+// This is where you can change the background image and how it appears. Background image should be changed inside the parens ()
+// The text "center center" indicates where the background is positioned. The left option can be top, bottom, or center. The right option can be right, left, or center
+// Background-size indicates how the background should appear. Cover will make sure the background image covers all the white space. You can swap this for "contain" or height and width properties.
+
+var background = 'background: url(https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?dpr=1&auto=format&fit=crop&w=1920&h=1080&q=80&cs=tinysrgb&crop=) center center; background-size: cover;'
+
+var style = document.createElement('style')
+style.type = 'text/css'
+style.innerHTML = '.jumbotron-custom {box-sizing: border-box; margin: 0; padding: 20px 0 120px; height: 100%; background: rgba(0,0,0,.3); margin-bottom: 0; ' + background + 'background-repeat: no-repeat; text-align: center;} .jumbotron-filter {height: 100%; width: 100%;} .container-group {width: 500px; position: relative; left: 10%; top: 50%; transform: translateY(50%);} .jumbotron-custom .header-text {margin-bottom: 20px;} .jumbotron-custom .header-text h1 {color: rgb(255,255,255); letter-spacing: 1.5px; font-weight: 300; font-size: 42px; cursor: default;} .btns-box {position: relative; text-align: center; margin: 0 auto; padding: 0;} .btns-box ul {margin: 0 auto; padding: 0; list-style: none;} .btns-box li {margin-bottom: 14px; margin-right: 7px; margin-left: 7px; display: inline-block; padding-right: 5px; padding-left: 5px;} .btns-box li a {text-align: center; cursor: default; text-decoration: none; background-color: transparent;} .no-style:hover {text-decoration: none !important; color: rgb(255,255,255);} a:focus {outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px;} a:focus, a:hover {color: #23527c; text-decoration: underline;} .circle-icon {height: 30px; width: 30px; border-radius: 100%; border: 2px solid rgb(255,255,255); line-height: 26px; color: rgb(255,255,255); position: relative; margin: 0 auto; cursor: pointer; transition: all 1s;} .vertical-line {position: relative; width: 1px; height: 15px; margin: 0 auto; border: 1px solid rgb(255,255,255); cursor: pointer; z-index: 99; transition: all 1s;} .btn-custom {position: relative; font-size: 16px; color: white; height: 30px; padding-left: 15px; padding-right: 15px; line-height: 26px; border: 2px solid rgb(255,255,255); border-radius: 2px; transition: all 1s; cursor: pointer; z-index: 999;}.no-style:hover .btn-custom, .no-style:hover .circle-icon { background: rgba(255,255,255,.25); transition: all .35s;} .no-style:hover .btn-custom, .no-style:hover .circle-icon, .no-style:hover .vertical-line { .text-shadow: 4px 4px 6px rgba(100, 100, 100, 1); box-shadow: 4px 4px 6px rgba(100, 100, 100, 1); transition: all .35s;} .fa {transform: translateY(6px);}'
+
+// Options that can be added to the above list of CSS:
+// Can add .nav-icon-recordbar-icontext{display:none;} to hide the Close Record button on online resources added to navigation
+// Can add .widget-heading{display:none;} to hide Widget title bar
+// Can add .nav-icon-titlebar-icononly{display:none;} to hide Widget Page title bar
+// Can add .widget .subheading{border-width:0px;}.widget .widget-content{border-width:0px;} to hide widget border in simplified theme
+
+document.getElementsByTagName('head')[0].appendChild(style)
+
+for (i=0; i< Icons.length; i++) {
+var li = document.createElement("li");
+li.innerHTML = '<a class="no-style" href="' + NavElements[i] + '"> \n <div class="circle-icon"?><i class="flip fa ' + Icons[i] + ' fa-1x"></i></div> \n <div class="vertical-line"></div> \n <div class="btn-custom">' + NavNames[i] + '</div></a>';
+$("#iconList").append(li);
+}
+// ]]></script>
