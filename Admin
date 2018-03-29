@@ -26,7 +26,7 @@ NavElements[4] = domain + 'addnewclasswizard.geo'
 NavElements[5] = domain + 'addnewonlineresourcewizard.geo'
 NavElements[6] = domain + 'notificationmanager.geo?nav=Notifications'
 NavElements[7] = domain + 'managetestandsurvey.geo?nav=TestsAndSurveys'
-NavElements[8] = 'https://www.google.com target="_blank"'
+NavElements[8] = 'https://www.google.com" target="_blank'
 
 // Update this list with text that should appear below the icons
 var NavNames = new Array();
