@@ -1,0 +1,20 @@
+<div class="jumbotron">
+<div class="container">
+<div class="content col-xs-4">
+<h1>Learning<br />Academy</h1>
+<p>We are committed to continuous learning and giving our associates opportunities to stay current with leading-edge technologies&mdash;and to develop communication skills so that they can perform their roles effectively and efficiently.</p>
+<ul class="list-unstyled">
+<li><a class="btn" href="https://gm1.geolearning.com/geonext/pssmb/trainingandmetricshome.geo?nav=TrainingandMetrics" target="_top"> Learner Dashboard </a></li>
+<li><a class="btn" href="https://gm1.geolearning.com/geonext/pssmb/coursecatalog.geo?nav=StudentCatalog" target="_top"> Catalog </a></li>
+<li><a class="btn" href="https://gm1.geolearning.com/geonext/pssmb/submittrainingrequestwizard.geo" target="_top"> Report External Training </a></li>
+<li><a class="btn" href="https://gm1.geolearning.com/geonext/pssmb/mytranscript.geo?nav=MyTranscript" target="_top"> Transcript </a></li>
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">// <![CDATA[
+var style = document.createElement('style')
+style.type = 'text/css'
+style.innerHTML = ".jumbotron {background: url('https://gm1.geolearning.com/GeoNext/ClientData/1908/TinyFCKRepo//sand_guy_kid.jpg') no-repeat center center; background-size: cover; height: 100%; margin-bottom: 0; padding-top: 48px; padding-bottom: 48px; box-sizing: border-box; font-family: 'Open Sans', sans-serif; display: block;} .container {max-width: 100%; margin-right: auto; margin-left: auto;} .col-xs-4 {position: relative; top: 0px; margin-left: 100px; width: 33.33333333%; float: left; min-height: 1px; padding-right: 15px; padding-left: 15px;} .jumbotron .container h1 {font-size: 43px; font-weight: 500; text-transform: uppercase; color: #3c3c3c; line-height: 1.5em; margin-top: 20px; margin-bottom: 10px;} .jumbotron .container p {font-size: 19px; font-weight: 400; margin-bottom: 15px;} .list-unstyled {padding-left: 0; list-style: none; margin-top: 0; margin-bottom: 10px;} .list-unstyled li {margin-top: 5px; margin-bottom: 5px;} .btn {font-weight: bold; font-size: 16px; text-transform: uppercase; border-radius: 2px; color: #ffffff; background-color: #08b7e8; text-decoration: none; -moz-transition: .3s ease-in-out; -webkit-transition: .3s ease-in-out; -o-transition: .3s ease-in-out; -ms-transition: .3s ease-in-out; transition: .3s ease-in-out; display: inline-block; padding: 6px 12px; margin-bottom: 0; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; touch-action: manipulation; cursor: pointer; user-select: none; background-image: none; border: 1px solid transparent;} .btn:active {background-image: none; outline: 0; -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125); box-shadow: inset 0 3px 5px rgba(0,0,0,.125);} .btn:hover {color: rgb(255,255,255); background-color: rgb(48, 118, 32);} .btn:focus { color: #333;  text-decoration: none;}"
+document.getElementsByTagName('head')[0].appendChild(style)
+// ]]></script>
