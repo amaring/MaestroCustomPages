@@ -1,0 +1,96 @@
+<script type="text/javascript">// <![CDATA[
+
+// put your domain name in below:
+var domain = "/geonext/DOMAINNAME/"
+
+// Assumptions: each item in the lists below will correspond to the item with the identical number in the other lists
+var Titles = new Array();
+Titles[0] = 'My Learning'
+Titles[1] = 'Transcript'
+Titles[2] = 'Catalog'
+Titles[3] = 'Discussions'
+Titles[4] = 'Media Response Courses'
+Titles[5] = 'Communicating our Message'
+Titles[6] = 'Snow Safety'
+Titles[7] = 'My Calendar'
+
+// You will want to upload your images to your environment and then pull the links to those images to populate below
+var Images = new Array();
+Images[0] = '/GeoNext/ClientData/1234/TinyFCKRepo//1.jpg'
+Images[1] = '/GeoNext/ClientData/1234/TinyFCKRepo//2.jpg'
+Images[2] = '/GeoNext/ClientData/1234/TinyFCKRepo//3.jpg'
+Images[3] = '/GeoNext/ClientData/1234/TinyFCKRepo//4.jpg'
+Images[4] = '/GeoNext/ClientData/1234/TinyFCKRepo//5.jpg'
+Images[5] = '/GeoNext/ClientData/1234/TinyFCKRepo//6.jpg'
+Images[6] = '/GeoNext/ClientData/1234/TinyFCKRepo//7.jpg'
+Images[7] = '/GeoNext/ClientData/1234/TinyFCKRepo//8.jpg'
+
+// Update this list with links to the pages the icons shoud take the user to
+var Nav = new Array();
+Nav[0] = domain + 'trainingandmetricshome.geo?nav=TrainingandMetricsHome'
+Nav[1] = domain + 'mytranscript.geo?nav=MyTranscript'
+Nav[2] = domain + 'coursecatalog.geo?nav=StudentCatalog'
+Nav[3] = 'https://community.sumtotalsystems.com/l/li/in/" target="_blank'
+Nav[4] = domain + 'search.geo?resultsPerPage=10&submitted=true&submitbutton=Go&q=emergency#'
+Nav[5] = domain + 'search.geo?submitted=true&nav=&CategoryIdFilter=3145&TypeFilter=All&page=1&CategoryPage=0&q=categories&OldCriteria=categories&limit=10&ServerFormDataId=vX4uhkCv6lM%3D'
+Nav[6] = domain + 'search.geo?submitted=true&nav=&CategoryIdFilter=3147&TypeFilter=All&page=1&CategoryPage=0&q=categories&OldCriteria=categories&limit=10&ServerFormDataId=59jlp09wbsk%3D'
+Nav[7] = domain + 'trainingschedule.geo?selectTab=Week+View'
+
+// Icons in the following list can be swapped for other icons available on https://fontawesome.com/
+// Note that not all icons are supported - you will want to test before making available for production use
+var Icons = new Array();
+Icons[0] = 'fa-desktop'
+Icons[1] = 'fa-graduation-cap'
+Icons[2] = 'fa-map'
+Icons[3] = 'fa-users'
+Icons[4] = 'fa-shopping-cart'
+Icons[5] = 'fa-comments'
+Icons[6] = 'fa-exclamation-triangle'
+Icons[7] = 'fa-list'
+// ]]></script>
+<div id="wrap" class="wrapper">
+<div class="jumbotron-custom">
+
+<!-- You will want to upload your logo to your environment and then insert the link to that image here. -->
+<div class="logo-circle"><img src="/GeoNext/ClientData/1908/TinyFCKRepo//logo.png" alt="" /></div>
+
+</div>
+</div>
+<script type="text/javascript">// <![CDATA[
+var classes;
+var stuff = "";
+var css = "";
+var div = document.createElement("div");
+div.className = "carousel-custom";
+for (i=0; i< Titles.length; i++) {
+stuff += '<div class="gallery-cell"><div class="left-box box' + i + '"><a href="' + Nav[i] + '"><div class="icon-circle absolute-center"><i class="fa ' + Icons[i] + ' fa-2x"></i></div></a></div><div class="right-box"><div class="text-box absolute-center">' + Titles[i] + '</div></div></div>'
+css += '.box' + i + ' {background-image: url("' + Images[i] + '");}'
+div.innerHTML = "<div class='gallery js-flickity' data-flickity-options='{ \"wrapAround\": true, \"freeScroll\": true, \"autoPlay\": 7000 }'>" + stuff + "</div>"
+};
+$("#wrap").append(div);
+
+
+var style = document.createElement('style')
+style.type = 'text/css'
+style.innerHTML =  css + '.left-box a, .left-box a:hover {text-decoration: none !important;}.absolute-center { /* Internet Explorer 10 */ display:-ms-flexbox;-ms-flex-pack:center;-ms-flex-align:center; /* Firefox */ display:-moz-box;-moz-box-pack:center;-moz-box-align:center; /* Safari, Opera, and Chrome */ display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;/* W3C */display:box;box-pack:center;box-align:center;}.jumbotron-custom {height: 40vh; width: 100%; background-image: url(https://images.unsplash.com/photo-1414690165279-49ab0a9a7e66?dpr=1&auto=format&fit=crop&w=1920&h=1080&q=80&cs=tinysrgb&crop=); background-position: center center; background-repeat: no-repeat; background-size: cover;}.logo-circle { height: 140px; width: 140px; border-radius: 100%; overflow: hidden; background-color: white; text-align: center; position: relative; top: calc(40vh - 70px); margin: 0 auto; box-shadow: 0px 1px 5px rgba(0,0,0,0.2); border: 5px solid white;}.logo-circle img {position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); height: 90%;} .box3, .box6 {background-position: center left !important;}.left-box { display: inline-block; width: 150px; height: 100%; background-position: center, center; background-size: cover; padding: 0; margin: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px;} .icon-circle { height: 50px; width: 50px; line-height:  64.5px; border-radius: 100%; background-color: white; position: relative; left: 125px; top: 72px; color: rgb(33, 18, 102); box-shadow: 0px 1px 5px rgba(0,0,0,0.2); transition: all ease .5s; pointer-events: all; cursor:pointer;}.left-box a { pointer-events: none; cursor: move; cursor: -webkit-grab; cursor: grab;}.left-box a .icon-circle:hover { color: white; background-color: rgb(33, 18, 102);}.right-box { display: inline-block; float:right; width: 150px; height: 200px; padding: 0; margin: 0; text-align: center;}.text-box { padding: 25px; width: 100%; font-size: 16px; font-weight: 700; height: 100%; color: rgb(80,80,80);}.carousel-custom { margin-top: 100px;}.flickity-viewport {padding-top: 5px; padding-bottom: 5px; height: 210px !important;}.gallery-cell { border-radius: 4px; width: 300px; height: 200px; margin-right: 10px; box-shadow: 0px 1px 5px rgba(0,0,0,0.2); transition: box-shadow ease .35s;}.gallery-cell.is-selected { box-shadow: 0px 1px 8px rgb(33, 18, 102);}.flickity-page-dots {bottom: -22px;}.flickity-page-dots .dot { height: 4px; width: 40px; margin: 0; border-radius: 0;}.flickity-prev-next-button { width: 100px; height: 100px; background: transparent;}.flickity-prev-next-button:hover { background: transparent;}.flickity-prev-next-button .arrow { fill: rgb(33, 18, 102);}.flickity-prev-next-button.no-svg { color: rgb(33, 18, 102);}.flickity-prev-next-button:disabled { display: none;}'
+
+// Options that can be added to the above list of CSS:
+// Can add .nav-icon-recordbar-icontext{display:none;} to hide the Close Record button on online resources added to navigation
+// Can add .widget-heading{display:none;} to hide Widget title bar
+// Can add .nav-icon-titlebar-icononly{display:none;} to hide Widget Page title bar
+// Can add .widget .subheading{border-width:0px;}.widget .widget-content{border-width:0px;} to hide widget border in simplified theme
+
+var link = document.createElement('link')
+link.rel = "stylesheet"
+link.href = "https://unpkg.com/flickity@2/dist/flickity.min.css"
+
+var script = document.createElement('script')
+script.src = "https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"
+
+var d = document.createDocumentFragment();
+d.appendChild(style)
+d.appendChild(link)
+d.appendChild(script)
+
+document.getElementsByTagName('head')[0].appendChild(d)
+// ]]></script>
