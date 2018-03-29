@@ -1,0 +1,37 @@
+<script type="text/javascript">// <![CDATA[
+var today = new Date();
+var thisMonth = today.getMonth()
+$.getJSON("CatalogSearchAPI.geo?Format=JSON&courses=True&classes=False&bundles=False&olrs=False&featured=False&orderby=Created&orderdirection=Desc", function(course) {
+	if (course.length != 0){
+console.log(course);
+$.each(course, function(i, item){
+var courseName = course.Title[i]
+console.log(courseName);
+});
+}
+});
+$.getJSON("MyLearningAjax.geo?wid=53836&instanceid=ASM2192", function(data) {
+	if (data.length != 0){
+console.log(data)
+		//What do we want to do with this data?
+		$.each(data, function(i, item){
+			var due = new Date(parseInt((data[i].DueDate).substr(6,13))) //note that this will return the wrong time due to UTC offset
+			var dueMonth = due.getMonth();
+			//var daysRemaining = (due - today)/1000;
+			if (dueMonth = thisMonth && data[i].HasDueDate == true) {
+				$("#current").append("<div style='display: inline-block; float: left;'><p><a href=\""+data[i].Link+"\">"+data[i].Name+"</a></p></div><div style='display:inline-block; float:right;'>"+data[i].DueDateDisplay+"</div><div style='clear:both;'></div>")
+			} else {
+				$("#contents").append("<p><a href=\""+data[i].Link+"\">"+data[i].Name+"</a></p>");
+			}
+		});
+	} else {
+		$("#contents").append("<p>Nothing to display.</p>");
+	};
+});
+// ]]></script>
+<div id="current" style="color: white;">
+<h1 style="color: white;">Due this month | Due in the past</h1>
+<!-- . --></div>
+<div id="contents" style="color: white;">
+<h1 style="color: white;">No Due Date | Future Due date</h1>
+<!-- . --></div>
