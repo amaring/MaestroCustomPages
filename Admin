@@ -1,0 +1,85 @@
+<script type="text/javascript">// <![CDATA[
+// put your domain name in below:
+var domain = "/geonext/DOMAINNAME/"
+// Assumptions: each item in the lists below will correspond to the item with the identical number in the other two lists
+// Icons in the following list can be swapped for other icons available on https://fontawesome.com/
+// Note that not all icons are supported - you will want to test before making available for production use
+
+var Icons = new Array();
+Icons[0] = 'fa-users'
+Icons[1] = 'fa-cloud-upload'
+Icons[2] = 'fa-desktop'
+Icons[3] = 'fa-folder-open'
+Icons[4] = 'fa-thumbs-up'
+Icons[5] = 'fa-file-powerpoint-o'
+Icons[6] = 'fa-envelope'
+Icons[7] = 'fa-rocket'
+Icons[8] = 'fa-bar-chart'
+
+// Update this list with links to the pages the icons shoud take the user to
+var NavElements = new Array();
+NavElements[0] = domain + 'userstabs.geo?nav=Users'
+NavElements[1] = domain + 'addnewcoursewizard.geo'
+NavElements[2] = domain + 'gradebook.geo?nav=Gradebook'
+NavElements[3] = domain + 'lmlpplans.geo?nav=CreateNewLearningPlan'
+NavElements[4] = domain + 'addnewclasswizard.geo'
+NavElements[5] = domain + 'addnewonlineresourcewizard.geo'
+NavElements[6] = domain + 'notificationmanager.geo?nav=Notifications'
+NavElements[7] = domain + 'managetestandsurvey.geo?nav=TestsAndSurveys'
+NavElements[8] = 'https://www.google.com target="_blank"'
+
+// Update this list with text that should appear below the icons
+var NavNames = new Array();
+NavNames[0] = 'User Creation'
+NavNames[1] = 'Course Creation'
+NavNames[2] = 'Gradebook Management'
+NavNames[3] = 'Learning Plans'
+NavNames[4] = 'ILT Content'
+NavNames[5] = 'Upload File'
+NavNames[6] = 'Notifications'
+NavNames[7] = 'Tests and Surveys'
+NavNames[8] = 'External link (opens in a new window / tab)'
+// ]]></script>
+<div class="wrapper">
+<div class="background">
+<div class="buttons-wrapper-outer">
+<div class="buttons-wrapper-inner">
+<div class="header">
+<div class="header-text">
+
+<!-- Feel free to change the header here -->
+<h2>ADMINISTRATION</h2>
+
+</div>
+</div>
+<ul id="iconList" class="list-unstyled list-inline">&nbsp;</ul>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">// <![CDATA[
+
+// This is where you can change the background image and how it appears. Background image should be changed inside the parens ()
+// The text "center center" indicates where the background is positioned. The left option can be top, bottom, or center. The right option can be right, left, or center
+// Background-size indicates how the background should appear. Cover will make sure the background image covers all the white space. You can swap this for "contain" or height and width properties.
+
+var background = 'background: url(https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?dpr=1&auto=format&fit=crop&w=1920&h=1080&q=80&cs=tinysrgb&crop=) center center; background-size: cover;'
+
+//
+var style = document.createElement('style')
+style.type = 'text/css'
+style.innerHTML = '.wrapper {height: 100%; width: 100%; position: relative; box-sizing: border-box;} .wrapper a:hover {text-decoration: none;} .wrapper .background { position: relative; height: 100%; width: 100%; ' + background + ' padding-bottom: 80px;} .buttons-wrapper-outer { position: relative; top: 10%; -ms-transform: translateY(5%); -webkit-transform: translateY(5%); transform: translateY(5%); text-align: center;} .buttons-wrapper-inner { position: relative; left: 0; right: 0; max-width: 1000px; margin: 0 auto;} .header { position: relative; text-align: center; margin-bottom: 50px;} .header-text { text-transform: uppercase; font-size: 22px; font-weight: 700; width: 400px; margin: auto; padding: 5px 0px 15px 0px; color: rgba(255,255,255,9); border-radius: 4px; background-color: rgba(36, 39, 53,.8); transition: all .3s ease;}  h2 { font-size: 30px; margin-top: 20px; margin-bottom: 10px; font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit;} .list-inline { padding-left: 0; margin-left: -5px; list-style: none; padding-left: 0; margin-top: 0; margin-bottom: 10px;} .list-inline>li { display: inline-block; padding-right: 5px; padding-left: 5px;} .links { text-align: center; color: white; margin: 15px; margin-bottom: 25px; transition: all .3s ease;} .small { font-size: 85%;} a { color: #337ab7; text-decoration: none; background-color: transparent;} a:hover { text-decoration: none; color: rgb(255,255,255);} a:focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px;} a:focus, a:hover { color: #23527c; text-decoration: underline;} a:active, a:hover { outline: 0;} .links i { display: block; margin-bottom: 15px; text-shadow: 0px 2px 5px rgba(0,0,0,.4); transition: all .3s ease;} .links span { text-transform: uppercase; font-weight: 700; font-size: 20px; text-shadow: 0px 2px 5px rgba(0,0,0,.4); transition: all .3s ease;}'
+// Options that can be added to the above list of CSS:
+// Can add .nav-icon-recordbar-icontext{display:none;} to hide the Close Record button on online resources added to navigation
+// Can add .widget-heading{display:none;} to hide Widget title bar
+// Can add .nav-icon-titlebar-icononly{display:none;} to hide Widget Page title bar
+// Can add .widget .subheading{border-width:0px;}.widget .widget-content{border-width:0px;} to hide widget border in simplified theme
+
+document.getElementsByTagName('head')[0].appendChild(style)
+
+for (i=0; i< Icons.length; i++) {
+var li = document.createElement("li");
+li.innerHTML = '<a class="links smmall" href="' + NavElements[i] + '"> \n <i class="fa ' + Icons[i] + ' fa-4x"></i> \n <span>' + NavNames[i] + '</span></a>';
+$("#iconList").append(li);
+}
+// ]]></script>
