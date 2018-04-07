@@ -1,8 +1,10 @@
 <script type="text/javascript">// <![CDATA[
+// First section here is some custom CSS to apply to the widget so that we're not displaying the out of the box widget lines.
 var style = document.createElement('style')
 style.type = 'text/css'
 style.innerHTML = '.corner{display:none} .widget{border-radius: 8px;} .special{top:-19px;}';
 document.getElementsByTagName('head')[0].appendChild(style)
+// Now, a little calculation to determine what is today's date so we can calculate when items are due.
 var today = new Date();
 var thisYear = today.getYear();
 var thisMonth = today.getMonth()
@@ -11,9 +13,10 @@ var thisMonth = today.getMonth()
 	} else {
 		var nextMonth = thisMonth + 1
 	};
+// Pull the data from the my learning widget - Note that the widget id (wid) should be coming from a My Learning widget in the LMS
 $.getJSON("MyLearningAjax.geo?wid=38273&instanceid=ASM0817", function(data) {
 	if (data.length != 0){
-		//What do we want to do with this data?
+		//What do we want to do with this data? Log it for debugging purposes.
 console.log(data)
 		$.each(data, function(i, item){
 			var due = new Date(parseInt((data[i].DueDate).substr(6,13))) //note that this will return the wrong time due to UTC offset
@@ -40,15 +43,17 @@ console.log(data)
 					// no due date - show as future - may need client feedback
 					$("#contents").append("<p><a href=\""+data[i].LaunchNowLink+"&ReturnURL=/displaywidgetpage.geo?id=jO5eo7b40bMw1yHD8SuRr3T1ibVoJZqxu0GBmFSqVR5NuaPnaTh5FQ..&nav=hom3\">"+data[i].Name+"</a></p>");
 				};
-			} else{ //don't show non-required training ??
+			} else{ //Should we show show non-required training - going to show this as items due in the future, because due date non-existent
                               $("#contents").append("<p><a href=\""+data[i].LaunchNowLink+"&ReturnURL=/displaywidgetpage.geo?id=jO5eo7b40bMw1yHD8SuRr3T1ibVoJZqxu0GBmFSqVR5NuaPnaTh5FQ..&nav=hom3\">"+data[i].Name+"</a></p>");
 			};
 		})
 	} else {
+		// If the user has no training to display, we can add language under the headers by uncommenting the items below
 		//$("#current").append("<p>Nothing to display.</p>");
 		//$("#contents").append("<p>Nothing to display.</p>");
 	};
 });
+// More CSS to hide this widget's title and to add some more customized settings to the content of the widget.
 $(".heading-title")[0].style.display = "none";
 $(".widget.widget-data-list.widget-data-list-title").css({"border":"#F6F6F6 solid 8px","background-color":"#F6F6F6"});
 // ]]></script>
